@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo/logo.png";
 
 function NavItem() {
-    const [menuToggle, setMenuToggle] = React.useState(false);
-    const [socialToggle, setSocialToggle] = React.useState(false);
-    const [headerFixed, setHeaderFixed] = React.useState(false);
+    const [menuToggle, setMenuToggle] = useState(false);
+    const [socialToggle, setSocialToggle] = useState(false);
+    const [headerFixed, setHeaderFixed] = useState(false);
 
     window.addEventListener("scroll", () => {
         if (window.scrollY > 200) {
@@ -48,7 +48,23 @@ function NavItem() {
                                 <li><Link to="/about" >About</Link></li>
                                 <li><Link to="/about" >Contact</Link></li>
                             </ul>
+
                         </div>
+                        
+
+                        <Link to="/sign-up" className='lab-btn me-3 d-none d-md-block'> Create Account</Link>
+                            <Link to="/login" className='d-none d-md-block'>Log In</Link>
+
+                        <div onClick={() => {setMenuToggle(!menuToggle)}} className={`header-bar d-lg-none ${menuToggle ? "active" : ""} `}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div className="ellepsis-bar d-md-none " onClick={() => setSocialToggle(!socialToggle)}>
+                            <i className="icofont-info-square"></i>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
