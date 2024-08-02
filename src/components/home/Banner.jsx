@@ -2,6 +2,7 @@ import React from "react";
 import productData from "../../products.json";
 import { useState } from "react";
 import SelectedCategory from "../selectedCategory/SelectedCategory";
+import { Link } from "react-router-dom";
 
 const title = <h2>Search Your One From <span>Thousand</span> of Products</h2>;
 const desc = "We have the largest collection of products.";
@@ -49,17 +50,17 @@ const Banner = () => {
             <form>
                 <SelectedCategory select={"all"} />
                 <input type="text" name="search" placeholder="Search Your Product" value={searchInput} onChange={searchProduct} />
-            </form>
             <button type="submit">
                 <i className="icofont-search"></i>
             </button>
+            </form>
 
             <p>{desc}</p>
             <ul className="lab-ul">
                 {searchInput && filteredProducts.map((product, i) => (
                     <li key={i}>
-                        {/* <Link to={`/shop/${product.id}`}>{product.name}</Link> */}
-                        <p>{product.name}</p>
+                        <Link to={`/shop/${product.id}`}>{product.name}</Link>
+                        {/* <p>{product.name}</p> */}
                     </li>
                 ))}
             </ul>
