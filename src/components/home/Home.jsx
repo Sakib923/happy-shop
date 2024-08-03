@@ -6,6 +6,7 @@ import Register from './Register'
 import LocationSprade from './LocationSprade';
 import AboutUs from './AboutUs'
 import AppSection from './AppSection'
+import Sponser from './Sponser'
 
 
 
@@ -19,6 +20,7 @@ const Home = () => {
         <LocationSprade />
         <AboutUs />
         <AppSection />
+        <Sponser />
     </div>
   )
 }
